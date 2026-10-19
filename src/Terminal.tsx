@@ -96,17 +96,37 @@ export default function TerminalView({
       fontFamily: fontFamily || DEFAULT_TERM_FONT,
       fontSize: fontSize ?? 13,
       cursorBlink: true,
+      // Catppuccin Mocha, including the 16 ANSI colors so claude's ANSI theme
+      // and any TUI running here pick up the palette
       theme: {
-        background: "#1a1714",
-        foreground: "#ece6df",
-        cursor: "#d97757",
-        selectionBackground: "#3a342e",
+        background: "#1e1e2e",
+        foreground: "#cdd6f4",
+        cursor: "#f5e0dc",
+        cursorAccent: "#1e1e2e",
+        selectionBackground: "#585b70",
+        selectionForeground: "#cdd6f4",
+        black: "#45475a",
+        red: "#f38ba8",
+        green: "#a6e3a1",
+        yellow: "#f9e2af",
+        blue: "#89b4fa",
+        magenta: "#f5c2e7",
+        cyan: "#94e2d5",
+        white: "#bac2de",
+        brightBlack: "#585b70",
+        brightRed: "#f38ba8",
+        brightGreen: "#a6e3a1",
+        brightYellow: "#f9e2af",
+        brightBlue: "#89b4fa",
+        brightMagenta: "#f5c2e7",
+        brightCyan: "#94e2d5",
+        brightWhite: "#a6adc8",
         // xterm draws its own scrollbar slider (not a native ::-webkit one) and
         // colors it from the theme — unset means invisible, so give it visible
         // colors matching the app (muted, accent on hover/drag)
-        scrollbarSliderBackground: "rgba(156, 148, 138, 0.55)",
-        scrollbarSliderHoverBackground: "rgba(156, 148, 138, 0.8)",
-        scrollbarSliderActiveBackground: "rgba(217, 119, 87, 0.95)",
+        scrollbarSliderBackground: "rgba(147, 153, 178, 0.55)",
+        scrollbarSliderHoverBackground: "rgba(147, 153, 178, 0.8)",
+        scrollbarSliderActiveBackground: "rgba(203, 166, 247, 0.95)",
       },
     });
     termRef.current = term;
